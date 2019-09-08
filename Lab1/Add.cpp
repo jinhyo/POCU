@@ -1,4 +1,10 @@
-int Add(int a, int b)
+#include <iostream>
+
+namespace lab1
 {
-	return a + b;
+	int Add(int a, int b)
+	{
+		return a + b;
+	}
 }
+
