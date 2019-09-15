@@ -10,7 +10,7 @@ namespace lab2
 		string trash;
 		out << right;
 		out << setw(13) << setfill(' ') << "oct" << setw(11) << "dec" << setw(8) << "hex" << endl << setfill('-');
-		out << setw(13) << ' ' << setw(11) << ' ' << setw(8) << ' ' << endl << setfill(' ');
+		out << setw(13) << ' ' << setw(11) << ' ' << setw(8) << "" << endl << setfill(' ');
 		
 		while (!in.eof())
 		{
@@ -28,7 +28,8 @@ namespace lab2
 
 	void PrintMaxFloat(std::istream& in, std::ostream& out)
 	{
-		float num, max = 0;
+		//주의: -값이 단 하나 들어 있을 경우에는 해당 값이 최대 값
+		float num, max = 0; 
 		string trash;
 		int leftColumn = 5;
 		int rightColumn = 15;
