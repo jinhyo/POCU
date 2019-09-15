@@ -29,7 +29,7 @@ namespace lab2
 	void PrintMaxFloat(std::istream& in, std::ostream& out)
 	{
 		//주의: -값이 단 하나 들어 있을 경우에는 해당 값이 최대 값
-		float num, max = 0; 
+		float num, max = LLONG_MIN; 
 		string trash;
 		int leftColumn = 5;
 		int rightColumn = 15;
