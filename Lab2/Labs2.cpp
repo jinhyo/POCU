@@ -8,10 +8,9 @@ namespace lab2
 	{
 		int num;
 		string trash;
-		int column = 12;
 		out << right;
-		out << setw(column) << setfill(' ') << "oct" << setw(column) << "dec" << setw(column) << "hex" << endl << setfill('-');
-		out << setw(column) << ' ' << setw(column) << ' ' << setw(column) << ' ' << endl << setfill(' ');
+		out << setw(13) << setfill(' ') << "oct" << setw(11) << "dec" << setw(8) << "hex" << endl << setfill('-');
+		out << setw(13) << ' ' << setw(11) << ' ' << setw(8) << ' ' << endl << setfill(' ');
 		
 		while (!in.eof())
 		{
@@ -22,7 +21,7 @@ namespace lab2
 				in >> trash;
 			}
 			else
-				out << setw(column) << oct << num << setw(column) << dec << num << setw(column) << uppercase << hex << num << endl;
+				out << setw(13) << oct << num << setw(11) << dec << num << setw(8) << uppercase << hex << num << endl;
 		}
 		in.clear();
 	}
