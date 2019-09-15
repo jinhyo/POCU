@@ -10,8 +10,8 @@ namespace lab2
 		string trash;
 		int column = 12;
 		out << right;
-		out << setw(column) <<setfill(' ')<< "oct" << setw(column) << "dec" << setw(column) << "hex" << endl<<setfill('-');
-		out << setw(column) << ' ' << setw(column) << ' ' << setw(column) << ' ' << endl<<setfill(' ');
+		out << setw(column) << setfill(' ') << "oct" << setw(column) << "dec" << setw(column) << "hex" << endl << setfill('-');
+		out << setw(column) << ' ' << setw(column) << ' ' << setw(column) << ' ' << endl << setfill(' ');
 		
 		while (!in.eof())
 		{
@@ -29,11 +29,11 @@ namespace lab2
 
 	void PrintMaxFloat(std::istream& in, std::ostream& out)
 	{
-		float num, max=0;
+		float num, max = 0;
 		string trash;
 		int leftColumn = 5;
-		int rightColumn= 15;
-		out << right<<fixed<<setprecision(3)<<showpos<<internal;
+		int rightColumn = 15;
+		out << right << fixed << setprecision(3) << showpos << internal;
 
 		while (!in.eof())
 		{
@@ -45,11 +45,9 @@ namespace lab2
 				in >> trash;
 			}
 			else
-				out << setw(leftColumn) << setfill(' ') << "" <<
-				setw(rightColumn) << num << endl;
+				out << setw(leftColumn) << setfill(' ') << "" << setw(rightColumn) << num << endl;
 		}
 		in.clear();
-		out << setw(leftColumn) << setfill(' ')<<"max: " <<
-			setw(rightColumn) << max << endl;
+		out << setw(leftColumn) << setfill(' ') << "max: " << setw(rightColumn) << max << endl;
 	}
 }
