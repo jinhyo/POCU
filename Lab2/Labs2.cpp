@@ -21,7 +21,7 @@ namespace lab2
 				in >> trash;
 			}
 			else
-				out << setw(13) << oct << num << setw(11) << dec << num << setw(8) << uppercase << hex << num << endl;
+				out << setw(12) << oct << num << setw(11) << dec << num << setw(8) << uppercase << hex << num << endl;
 		}
 		in.clear();
 	}
