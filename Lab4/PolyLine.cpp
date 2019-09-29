@@ -79,7 +79,9 @@ namespace lab4
 			return false;
 		}
 		//memcpy_s(mContents[mIndex++], sizeof(Point), point, sizeof(Point));
-		*mContents[mIndex++] = *point;
+		// !!
+		*mContents[mIndex] = *point;
+		mIndex++;
 		return true;
 	}
 
@@ -153,12 +155,15 @@ namespace lab4
 				maxY = mContents[i]->GetY();
 			}
 		}
-		// 수정 필요
-		Point* min = new Point(minX, minY);
+		
+		// !!
+		*outMin = Point(minX, minY);
+		*outMax = Point(maxX, maxY);
+
+	/*	Point* min = new Point(minX, minY);
 		Point* max = new Point(maxX, maxY);
-		//mMin = new Point(minX, minY);
 		memcpy_s(outMin, sizeof(Point), min, sizeof(Point));
-		memcpy_s(outMax, sizeof(Point), max, sizeof(Point));
+		memcpy_s(outMax, sizeof(Point), max, sizeof(Point));*/
 
 		return true;
 	}
