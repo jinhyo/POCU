@@ -155,8 +155,11 @@ namespace lab4
 		}
 
 		// 수정 필요
-		outMin = new Point(minX, minY);
-		outMax = new Point(maxX, maxY);
+		Point* min = new Point(minX, minY);
+		Point* max = new Point(maxX, maxY);
+
+		memcpy_s(outMin, sizeof(Point), min, sizeof(Point));
+		memcpy_s(outMax, sizeof(Point), max, sizeof(Point));
 
 		return true;
 	}
