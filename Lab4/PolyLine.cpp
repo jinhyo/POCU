@@ -80,7 +80,7 @@ namespace lab4
 		}
 		//memcpy_s(mContents[mIndex++], sizeof(Point), point, sizeof(Point));
 		// !!
-		*mContents[mIndex] = *point;
+		mContents[mIndex] = (Point*)point;
 		mIndex++;
 		return true;
 	}
@@ -160,10 +160,10 @@ namespace lab4
 		*outMin = Point(minX, minY);
 		*outMax = Point(maxX, maxY);
 
-	/*	Point* min = new Point(minX, minY);
-		Point* max = new Point(maxX, maxY);
-		memcpy_s(outMin, sizeof(Point), min, sizeof(Point));
-		memcpy_s(outMax, sizeof(Point), max, sizeof(Point));*/
+		//Point* min = new Point(minX, minY);
+		//Point* max = new Point(maxX, maxY);
+		//memcpy_s(outMin, sizeof(Point), min, sizeof(Point));
+		//memcpy_s(outMax, sizeof(Point), max, sizeof(Point));
 
 		return true;
 	}
