@@ -15,7 +15,7 @@ namespace lab4
 		for (size_t i = 0; i < 10; i++)
 		{
 			// Point 공간을 할당 받지 않은 요소를 확인하면 탈출
-			if (mContents[i]==NULL)
+			if (mContents[i] == NULL)
 			{
 				break;
 			}
@@ -78,7 +78,7 @@ namespace lab4
 			return false;
 		}
 
-		mContents[mIndex++] = (Point*)point;
+		mContents[mIndex++] = const_cast<Point*>(point);
 
 		return true;
 	}

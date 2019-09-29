@@ -3,7 +3,8 @@
 namespace lab4
 {
 	Point::Point(float x, float y)
-		:mX(x), mY(y)
+		:mX(x)
+		, mY(y)
 	{
 	}
 
@@ -29,7 +30,7 @@ namespace lab4
 	// 추가 필요
 	Point Point::operator*(float operand) const
 	{
-		return Point(mX*operand, mY*operand);
+		return Point(mX * operand, mY * operand);
 	}
 	   	 
 	float Point::GetX() const
