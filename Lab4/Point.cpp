@@ -3,7 +3,7 @@
 namespace lab4
 {
 	Point::Point(float x, float y)
-		:mX(x)
+		: mX(x)
 		, mY(y)
 	{
 	}

@@ -74,7 +74,6 @@ namespace lab4
 	{
 		if (mIndex >= 10)
 		{
-			delete point;
 			return false;
 		}
 
@@ -119,11 +118,11 @@ namespace lab4
 		{
 			return false;
 		}
-		
-		float minX= LLONG_MAX;
-		float minY= LLONG_MAX;
-		float maxX= LLONG_MIN;
-		float maxY= LLONG_MIN;
+
+		float minX = LLONG_MAX;
+		float minY = LLONG_MAX;
+		float maxX = LLONG_MIN;
+		float maxY = LLONG_MIN;
 
 		// 최소 & 최대값 선정
 		for (size_t i = 0; i < 10; i++)
@@ -159,7 +158,7 @@ namespace lab4
 		Point* max = new Point(maxX, maxY);
 
 		memcpy_s(outMin, sizeof(Point), min, sizeof(Point));
-		memcpy_s(outMax, sizeof(Point), max, sizeof(Point));
+		memcpy_s(outMax, sizeof(Point), max, sizeof(Point*));
 
 		return true;
 	}

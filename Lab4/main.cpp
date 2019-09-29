@@ -1,4 +1,5 @@
 #include <cassert>
+#include <iostream>
 
 #include "Point.h"
 #include "PolyLine.h"
