@@ -158,7 +158,7 @@ namespace lab4
 		Point* max = new Point(maxX, maxY);
 
 		memcpy_s(outMin, sizeof(Point), min, sizeof(Point));
-		memcpy_s(outMax, sizeof(Point), max, sizeof(Point*));
+		memcpy_s(outMax, sizeof(Point), max, sizeof(Point));
 
 		return true;
 	}
