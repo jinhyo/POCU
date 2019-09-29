@@ -6,14 +6,12 @@
 namespace lab4
 {
 	PolyLine::PolyLine()
-		: mIndex(0)
 	{
 		// mContents에서 비어 있는 공간은 전부 NULL로 초기화
 		memset(mContents, NULL, sizeof(Point*) * 10);
 	}
 
 	PolyLine::PolyLine(const PolyLine& other)
-		: mIndex(0)
 	{
 		for (size_t i = 0; i < 10; i++)
 		{
@@ -81,7 +79,7 @@ namespace lab4
 			return false;
 		}
 
-		memcpy_s(mContents[mIndex++], sizeof(Point*), point, sizeof(Point*));
+		memcpy_s(mContents[mIndex++], sizeof(Point), point, sizeof(Point));
 
 		return true;
 	}
