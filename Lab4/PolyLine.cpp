@@ -78,9 +78,8 @@ namespace lab4
 		{
 			return false;
 		}
-
 		//memcpy_s(mContents[mIndex++], sizeof(Point), point, sizeof(Point));
-		mContents[mIndex++] = (Point*)point;
+		*mContents[mIndex++] = *point;
 		return true;
 	}
 
