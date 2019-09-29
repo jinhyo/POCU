@@ -1,16 +1,19 @@
 #include <cstring>
 #include <cmath>
+#include <cfloat>
 #include "PolyLine.h"
 
 namespace lab4
 {
 	PolyLine::PolyLine()
+		: mIndex(0)
 	{
 		// mContents에서 비어 있는 공간은 전부 NULL로 초기화
 		memset(mContents, NULL, sizeof(Point*) * 10);
 	}
 
 	PolyLine::PolyLine(const PolyLine& other)
+		: mIndex(0)
 	{
 		for (size_t i = 0; i < 10; i++)
 		{
@@ -65,7 +68,8 @@ namespace lab4
 
 		else
 		{
-			mContents[mIndex++] = new Point(x, y);
+			mContents[mIndex] = new Point(x, y);
+			mIndex++;
 			return true;
 		}
 	}
@@ -77,7 +81,7 @@ namespace lab4
 			return false;
 		}
 
-		mContents[mIndex++] = const_cast<Point*>(point);
+		mContents[mIndex++] = (Point*)point;
 
 		return true;
 	}
@@ -119,10 +123,10 @@ namespace lab4
 			return false;
 		}
 
-		float minX = LLONG_MAX;
-		float minY = LLONG_MAX;
-		float maxX = LLONG_MIN;
-		float maxY = LLONG_MIN;
+		float minX = FLT_MAX;
+		float minY = FLT_MAX;
+		float maxX = FLT_MIN;
+		float maxY = FLT_MIN;
 
 		// 최소 & 최대값 선정
 		for (size_t i = 0; i < 10; i++)
