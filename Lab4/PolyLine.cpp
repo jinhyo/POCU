@@ -81,7 +81,7 @@ namespace lab4
 			return false;
 		}
 
-		mContents[mIndex++] = (Point*)point;
+		mContents[mIndex++] = static_cast<Point*>(point);
 
 		return true;
 	}
