@@ -74,14 +74,14 @@ namespace lab4
 		}
 	}
 
-	bool PolyLine::AddPoint(const Point* point)
+	bool PolyLine::AddPoint(Point* point)
 	{
 		if (mIndex >= 10)
 		{
 			return false;
 		}
 
-		mContents[mIndex++] = static_cast<Point*>(point);
+		mContents[mIndex++] = point;
 
 		return true;
 	}
