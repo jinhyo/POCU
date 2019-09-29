@@ -21,6 +21,8 @@ namespace lab4
 
 	private:
 		Point* mContents[10];
+		//Point* mMax = NULL;
+		//Point* mMin = NULL;
 		int mIndex = 0;
 	};
 }
