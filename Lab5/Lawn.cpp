@@ -47,6 +47,7 @@ namespace lab5
 		}
 
 		default:
+			return 0;
 			break;
 		}
 	}

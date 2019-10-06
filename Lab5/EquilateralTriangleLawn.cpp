@@ -41,6 +41,7 @@ namespace lab5
 			return (mLength * 3) * 7;
 
 		default:
+			return 0;
 			break;
 		}
 	}
