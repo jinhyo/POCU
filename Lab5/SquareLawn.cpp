@@ -1,3 +1,4 @@
+#include "IFenceable.h"
 #include "SquareLawn.h"
 
 namespace lab5

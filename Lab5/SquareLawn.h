@@ -1,7 +1,6 @@
 #pragma once
 
 #include "IFenceable.h"
-
 #include "Lawn.h"
 
 namespace lab5
