@@ -4,6 +4,8 @@ namespace lab4
 {
 	class Point
 	{
+		friend Point operator*(float operand, Point& other);
+
 	public:
 		Point(float x, float y);
 		~Point();
@@ -19,7 +21,5 @@ namespace lab4
 		float mX;
 		float mY;
 	};
-
-	Point operator*(float operand, Point& other);
 
 }

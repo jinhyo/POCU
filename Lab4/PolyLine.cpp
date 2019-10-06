@@ -6,56 +6,48 @@
 namespace lab4
 {
 	PolyLine::PolyLine()
+		: mIndex(0)
 	{
-		// mContents에서 비어 있는 공간은 전부 NULL로 초기화
-		memset(mContents, NULL, sizeof(Point*) * 10);
 	}
 
 	PolyLine::PolyLine(const PolyLine& other)
+		: mIndex(other.mIndex)
 	{
-		for (size_t i = 0; i < 10; i++)
+		for (size_t i = 0; i < mIndex; i++)
 		{
-			// Point 공간을 할당 받지 않은 요소를 확인하면 탈출
-			if (mContents[i] == NULL)
-			{
-				break;
-			}
-
-			// 깊은 복사
-			mContents[i] = new Point(other[i]->GetX(), other[i]->GetY());
+			mContents[i] = new Point(other.mContents[i]->GetX(), other.mContents[i]->GetY());
 		}
 	}
 
+	PolyLine::~PolyLine()
+	{
+		for (size_t i = 0; i < mIndex; i++)
+		{
+			delete mContents[i];
+		}
+	}
 	const PolyLine& PolyLine::operator=(const PolyLine& other)
 	{
-		for (size_t i = 0; i < 10; i++)
+		if (this == &other)
 		{
-			// Point 공간을 할당 받지 않은 요소를 확인하면 탈출
-			if (mContents[i] == NULL)
-			{
-				break;
-			}
+			return *this;
+		}
 
-			// 깊은 복사
-			mContents[i] = new Point(other[i]->GetX(), other[i]->GetY());
+		for (size_t i = 0; i < mIndex; i++)
+		{
+			delete mContents[i];
+		}
+
+		mIndex = other.mIndex;
+
+		for (size_t i = 0; i < mIndex; i++)
+		{
+			mContents[i] = new Point(other.mContents[i]->GetX(), other.mContents[i]->GetY());
 		}
 
 		return *this;
 	}
 
-	PolyLine::~PolyLine()
-	{
-		for (size_t i = 0; i < 10; i++)
-		{
-			// Point 공간을 할당 받지 않은 요소를 확인하면 탈출
-			if (mContents[i] == NULL)
-			{
-				break;
-			}
-			
-			delete mContents[i];
-		}
-	}
 
 	bool PolyLine::AddPoint(float x, float y)
 	{
@@ -78,63 +70,50 @@ namespace lab4
 		{
 			return false;
 		}
-		//memcpy_s(mContents[mIndex++], sizeof(Point), point, sizeof(Point));
-		// !!
-		mContents[mIndex] = (Point*)point;
-		mIndex++;
+
+		if (point == nullptr)
+		{
+			return false;
+		}
+
+		mContents[mIndex++] = point;
+
 		return true;
 	}
 
 	bool PolyLine::RemovePoint(unsigned int i)
 	{
-		if (i >= 0 && i < 10)
-		{
-			if (mContents[i] == NULL)
-			{
-				return false;
-			}
-
-			// 삭제 후 배열 재정렬: 
-			// 배열의 중간 부분이 삭제될 경우 오른쪽 요소들을 한칸씩 왼쪽으로 이동
-			delete mContents[i];
-			for (size_t index = i; index < 9; index++)
-			{
-				mContents[index] = mContents[index + 1];
-			}
-			mContents[9] = NULL;
-			mIndex--;
-
-			return true;
-		}
-
-		else
+		if (i >= mIndex)
 		{
 			return false;
 		}
+
+		delete mContents[i];
+		mIndex--;
+
+		for (size_t index = i; index < mIndex; index++)
+		{
+			mContents[index] = mContents[index + 1];
+		}
+
+		return true;
 	}
 
 	bool PolyLine::TryGetMinBoundingRectangle(Point* outMin, Point* outMax) const
 	{
-		// mContents에 있는 Point가 두개 미만인 경우 false
-		// mContents에서 비어 있는 공간은 전부 NULL
-		if (mContents[1] == NULL)
+		if (mIndex >= 10)
 		{
 			return false;
 		}
 
-		float minX = FLT_MAX;
-		float minY = FLT_MAX;
-		float maxX = FLT_MIN;
-		float maxY = FLT_MIN;
+		float minX = mContents[0]->GetX();
+		float minY = mContents[0]->GetY();
+		float maxX = mContents[0]->GetX();
+		float maxY = mContents[0]->GetY();
 
 		// 최소 & 최대값 선정
-		for (size_t i = 0; i < 10; i++)
+		for (size_t i = 0; i < mIndex; i++)
 		{
-			if (mContents[i] == NULL)
-			{
-				break;
-			}
-
 			if (minX > mContents[i]->GetX())
 			{
 				minX = mContents[i]->GetX();
@@ -156,20 +135,19 @@ namespace lab4
 			}
 		}
 		
-		// !!
 		*outMin = Point(minX, minY);
 		*outMax = Point(maxX, maxY);
-
-		//Point* min = new Point(minX, minY);
-		//Point* max = new Point(maxX, maxY);
-		//memcpy_s(outMin, sizeof(Point), min, sizeof(Point));
-		//memcpy_s(outMax, sizeof(Point), max, sizeof(Point));
 
 		return true;
 	}
 
 	const Point* PolyLine::operator[](unsigned int i) const
 	{
+		if (i >= mIndex)
+		{
+			return nullptr;
+		}
+
 		return mContents[i];
 	}
 }

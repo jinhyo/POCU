@@ -27,7 +27,6 @@ namespace lab4
 		return mX * other.mX + mY * other.mY;
 	}
 
-	// 추가 필요
 	Point Point::operator*(float operand) const
 	{
 		return Point(mX * operand, mY * operand);
@@ -45,7 +44,7 @@ namespace lab4
 
 	Point operator*(float operand, Point& other)
 	{
-		return Point(other.GetX() * operand, other.GetY() * operand);
+		return Point(other.mX * operand, other.mY * operand);
 	}
 }
 
