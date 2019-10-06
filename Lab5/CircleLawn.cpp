@@ -12,6 +12,5 @@ namespace lab5
 	{
 		double tmp = PI * mRadius * mRadius;
 		return static_cast<unsigned int>(tmp + 0.5);
-
 	}
 }

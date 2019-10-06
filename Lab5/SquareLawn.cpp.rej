@@ -1,0 +1,9 @@
+diff a/Lab5/SquareLawn.cpp b/Lab5/SquareLawn.cpp	(rejected hunks)
+@@ -37,6 +37,7 @@
+ 			return (mLength * 4) * 7;
+ 
+ 		default:
++			return 0;
+ 			break;
+ 		}
+ 	}
