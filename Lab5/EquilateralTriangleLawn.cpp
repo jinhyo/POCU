@@ -6,7 +6,7 @@
 namespace lab5
 {
 	EquilateralTriangleLawn::EquilateralTriangleLawn(unsigned int length)
-		:Lawn()
+		: Lawn()
 	{
 		mLength = length;
 	}

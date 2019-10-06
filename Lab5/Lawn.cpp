@@ -32,20 +32,19 @@ namespace lab5
 			return GetArea() * 3;
 			break;
 
-			//수정 필요
 		case PERENNIAL_RYEGRASS:
 		{
 			double tmp1 = GetArea() * 2.5;
 			return static_cast<unsigned int>(tmp1 + 0.5);
-		}
 			break;
+		}
 
 		case ST_AUGUSTINE:
 		{
 			double tmp = GetArea() * 4.5;
 			return static_cast<unsigned int>(tmp + 0.5);
-		}
 			break;
+		}
 
 		default:
 			break;

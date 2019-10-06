@@ -22,7 +22,7 @@ namespace lab5
 		unsigned int GetMinimumSodRollsCount() const;
 
 	private:
-		const float PI = 3.14;
+		const float PI = 3.14f;
 		unsigned int mWidth = 0;
 		unsigned int mHeight = 0;
 		unsigned int mLength = 0;
