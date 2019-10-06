@@ -1,6 +1,5 @@
 #include <cmath>
 
-#include "IFenceable.h"
 #include "EquilateralTriangleLawn.h"
 
 namespace lab5

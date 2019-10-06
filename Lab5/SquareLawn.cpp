@@ -1,4 +1,3 @@
-#include "IFenceable.h"
 #include "SquareLawn.h"
 
 namespace lab5
@@ -6,18 +5,18 @@ namespace lab5
 	SquareLawn::SquareLawn(unsigned int length)
 		: Lawn()
 	{
-		mLength = length;
+		mWidth = length;
+		mHeight = length;
 	}
-
 
 	inline unsigned int SquareLawn::GetArea() const
 	{
-		return mLength * mLength;
+		return mWidth * mHeight;
 	}
 
 	unsigned int SquareLawn::GetMinimumFencesCount() const
 	{
-		double tmp1 = (mLength * 4) / 0.25;
+		double tmp1 = (mWidth * 2 + mHeight * 2) / 0.25;
 		unsigned int tmp2 = static_cast<unsigned int>(tmp1);
 		if (tmp1 == static_cast<double>(tmp2))
 		{
@@ -32,10 +31,10 @@ namespace lab5
 		switch (fenceType)
 		{
 		case RED_CEDAR:
-			return (mLength * 4) * 6;
+			return (mWidth * 2 + mHeight * 2) * 6;
 
 		case SPRUCE:
-			return (mLength * 4) * 7;
+			return (mWidth * 2 + mHeight * 2) * 7;
 
 		default:
 			return 0;
