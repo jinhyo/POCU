@@ -21,8 +21,7 @@ namespace lab6
 	{
 		if (v.size() < 1)
 		{
-			// UINT_MAX
-			return static_cast<unsigned int>(-1);
+			return INT_MAX;
 		}
 
 		int min = v[0];
