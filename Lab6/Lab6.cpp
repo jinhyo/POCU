@@ -76,7 +76,7 @@ namespace lab6
 		return average;
 	}
 
-	int NumberWithMaxOccurrence(const std::vector<int>& v)
+	/*int NumberWithMaxOccurrence(const std::vector<int>& v)
 	{
 		if (v.size() < 1)
 		{
@@ -102,7 +102,7 @@ namespace lab6
 			}
 		}
 		return majority;
-	}
+	}*/
 
 	void SortDescending(std::vector<int>& v)
 	{
