@@ -45,6 +45,9 @@
     <ClCompile Include="UBoat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DeusExMachina.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IDivable.h">
@@ -84,6 +87,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UBoat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeusExMachina.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

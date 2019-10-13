@@ -64,5 +64,5 @@ namespace assignment2
 	}
 
 	unsigned int DeusExMachina::mDeusMachineCount = 0;
-	static const DeusExMachina* mDeusMachine = NULL;
+	DeusExMachina* DeusExMachina::mDeusMachine = NULL;
 }
