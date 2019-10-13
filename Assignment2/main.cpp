@@ -1,4 +1,5 @@
 #include <cassert>
+#include <iostream>
 
 #include "Vehicle.h"
 #include "Airplane.h"
@@ -102,28 +103,129 @@ int main()
 
 	assert(!bAdded);
 
-	//deusExMachina1->RemoveVehicle(9);
-	//deusExMachina1->RemoveVehicle(8);
+	deusExMachina1->RemoveVehicle(9);
+	deusExMachina1->RemoveVehicle(8);
 	bool bRemoved = deusExMachina1->RemoveVehicle(7);
 	assert(bRemoved);
 
 	bRemoved = deusExMachina1->RemoveVehicle(9);
 	assert(!bRemoved);
 
-	//deusExMachina1->Travel(); // 모든 운송 수단이 이동
-	//deusExMachina1->Travel(); // Boat, Motorcycle, 두 Sedan, UBoat가 이동
-	//deusExMachina1->Travel(); // Motorcycle, 두 Sedan이 이동
-	//deusExMachina1->Travel(); // Boat, Motorcycle, 두 Sedan이 이동
-	//deusExMachina1->Travel(); // UBoat만 빼고 전부 이동
-	//deusExMachina1->Travel(); // 어떤 운송 수단도 움직이지 않음
-	//deusExMachina1->Travel(); // Boat, Motorcycle, 트레일러 안 달린 Sedan, UBoat가 이동
-	//deusExMachina1->Travel(); // Boat, Motorcycle, 두 Sedan, UBoat가 이동
-	//deusExMachina1->Travel(); // Airplane, Boatplane, Motorcycle, 두 Sedan이 이동
-	//deusExMachina1->Travel(); // Boat, Motorcycle, 두 Sedan이 이동
-	//deusExMachina1->Travel(); // Boat, Motorcycle, 두 Sedan이 이동
-	//deusExMachina1->Travel(); // 트레일러 달린 Sedan만 이동
+	/*std::cout << boat->GetMaxSpeed() << std::endl;
+	std::cout << uboat->GetMaxSpeed() << std::endl;
+	std::cout << a.GetMaxSpeed() << std::endl;*/
 
-	//assert(deusExMachina1->GetFurthestTravelled() == boat);
+	deusExMachina1->Travel(); // 모든 운송 수단이 이동 
+	std::cout << "0 airplane: " << airplane->GetDistance() << std::endl;
+	std::cout << "1 boat: " << boat->GetDistance() << std::endl;
+	std::cout << "2 boatplane: " << boatplane->GetDistance() << std::endl;
+	std::cout << "3 motorcycle: " << motorcycle->GetDistance() << std::endl;
+	std::cout << "4 sedan: " << sedan->GetDistance() << std::endl;
+	std::cout << "5 sedan2: " << sedan2->GetDistance() << std::endl;
+	std::cout << "6 uboat: " << uboat->GetDistance() << std::endl;
+	std::cout << std::endl;
+	deusExMachina1->Travel(); // Boat, Motorcycle, 두 Sedan, UBoat가 이동 1 4 5 6
+	std::cout << "0 airplane: " << airplane->GetDistance() << std::endl;
+	std::cout << "1 boat: " << boat->GetDistance() << std::endl;
+	std::cout << "2 boatplane: " << boatplane->GetDistance() << std::endl;
+	std::cout << "3 motorcycle: " << motorcycle->GetDistance() << std::endl;
+	std::cout << "4 sedan: " << sedan->GetDistance() << std::endl;
+	std::cout << "5 sedan2: " << sedan2->GetDistance() << std::endl;
+	std::cout << "6 uboat: " << uboat->GetDistance() << std::endl;
+	std::cout << std::endl;
+	deusExMachina1->Travel(); // Motorcycle, 두 Sedan이 이동 3 4 5
+	std::cout << "0 airplane: " << airplane->GetDistance() << std::endl;
+	std::cout << "1 boat: " << boat->GetDistance() << std::endl;
+	std::cout << "2 boatplane: " << boatplane->GetDistance() << std::endl;
+	std::cout << "3 motorcycle: " << motorcycle->GetDistance() << std::endl;
+	std::cout << "4 sedan: " << sedan->GetDistance() << std::endl;
+	std::cout << "5 sedan2: " << sedan2->GetDistance() << std::endl;
+	std::cout << "6 uboat: " << uboat->GetDistance() << std::endl;
+	std::cout << std::endl;
+	deusExMachina1->Travel(); // Boat, Motorcycle, 두 Sedan이 이동1 3 4 5
+	std::cout << "0 airplane: " << airplane->GetDistance() << std::endl;
+	std::cout << "1 boat: " << boat->GetDistance() << std::endl;
+	std::cout << "2 boatplane: " << boatplane->GetDistance() << std::endl;
+	std::cout << "3 motorcycle: " << motorcycle->GetDistance() << std::endl;
+	std::cout << "4 sedan: " << sedan->GetDistance() << std::endl;
+	std::cout << "5 sedan2: " << sedan2->GetDistance() << std::endl;
+	std::cout << "6 uboat: " << uboat->GetDistance() << std::endl;
+	std::cout << std::endl;
+	deusExMachina1->Travel(); // UBoat만 빼고 전부 이동 0 1 2 3 4 5 7 8 9
+	std::cout << "0 airplane: " << airplane->GetDistance() << std::endl;
+	std::cout << "1 boat: " << boat->GetDistance() << std::endl;
+	std::cout << "2 boatplane: " << boatplane->GetDistance() << std::endl;
+	std::cout << "3 motorcycle: " << motorcycle->GetDistance() << std::endl;
+	std::cout << "4 sedan: " << sedan->GetDistance() << std::endl;
+	std::cout << "5 sedan2: " << sedan2->GetDistance() << std::endl;
+	std::cout << "6 uboat: " << uboat->GetDistance() << std::endl;
+	std::cout << std::endl;
+	deusExMachina1->Travel(); // 어떤 운송 수단도 움직이지 않음 zero
+	std::cout << "0 airplane: " << airplane->GetDistance() << std::endl;
+	std::cout << "1 boat: " << boat->GetDistance() << std::endl;
+	std::cout << "2 boatplane: " << boatplane->GetDistance() << std::endl;
+	std::cout << "3 motorcycle: " << motorcycle->GetDistance() << std::endl;
+	std::cout << "4 sedan: " << sedan->GetDistance() << std::endl;
+	std::cout << "5 sedan2: " << sedan2->GetDistance() << std::endl;
+	std::cout << "6 uboat: " << uboat->GetDistance() << std::endl;
+	std::cout << std::endl;
+	deusExMachina1->Travel(); // Boat, Motorcycle, 트레일러 안 달린 Sedan, UBoat가 이동 1 3 5 
+	std::cout << "0 airplane: " << airplane->GetDistance() << std::endl;
+	std::cout << "1 boat: " << boat->GetDistance() << std::endl;
+	std::cout << "2 boatplane: " << boatplane->GetDistance() << std::endl;
+	std::cout << "3 motorcycle: " << motorcycle->GetDistance() << std::endl;
+	std::cout << "4 sedan: " << sedan->GetDistance() << std::endl;
+	std::cout << "5 sedan2: " << sedan2->GetDistance() << std::endl;
+	std::cout << "6 uboat: " << uboat->GetDistance() << std::endl;
+	std::cout << std::endl;
+	deusExMachina1->Travel(); // Boat, Motorcycle, 두 Sedan, UBoat가 이동 1 3 4 5 6
+	std::cout << "0 airplane: " << airplane->GetDistance() << std::endl;
+	std::cout << "1 boat: " << boat->GetDistance() << std::endl;
+	std::cout << "2 boatplane: " << boatplane->GetDistance() << std::endl;
+	std::cout << "3 motorcycle: " << motorcycle->GetDistance() << std::endl;
+	std::cout << "4 sedan: " << sedan->GetDistance() << std::endl;
+	std::cout << "5 sedan2: " << sedan2->GetDistance() << std::endl;
+	std::cout << "6 uboat: " << uboat->GetDistance() << std::endl;
+	std::cout << std::endl;
+	deusExMachina1->Travel(); // Airplane, Boatplane, Motorcycle, 두 Sedan이 이동 0 2 3 4 5
+	std::cout << "0 airplane: " << airplane->GetDistance() << std::endl;
+	std::cout << "1 boat: " << boat->GetDistance() << std::endl;
+	std::cout << "2 boatplane: " << boatplane->GetDistance() << std::endl;
+	std::cout << "3 motorcycle: " << motorcycle->GetDistance() << std::endl;
+	std::cout << "4 sedan: " << sedan->GetDistance() << std::endl;
+	std::cout << "5 sedan2: " << sedan2->GetDistance() << std::endl;
+	std::cout << "6 uboat: " << uboat->GetDistance() << std::endl;
+	std::cout << std::endl;
+	deusExMachina1->Travel(); // Boat, Motorcycle, 두 Sedan이 이동 1 3 4 5
+	std::cout << "0 airplane: " << airplane->GetDistance() << std::endl;
+	std::cout << "1 boat: " << boat->GetDistance() << std::endl;
+	std::cout << "2 boatplane: " << boatplane->GetDistance() << std::endl;
+	std::cout << "3 motorcycle: " << motorcycle->GetDistance() << std::endl;
+	std::cout << "4 sedan: " << sedan->GetDistance() << std::endl;
+	std::cout << "5 sedan2: " << sedan2->GetDistance() << std::endl;
+	std::cout << "6 uboat: " << uboat->GetDistance() << std::endl;
+	std::cout << std::endl;
+	deusExMachina1->Travel(); // Boat, Motorcycle, 두 Sedan이 이동 1 3 4 5
+	std::cout << "0 airplane: " << airplane->GetDistance() << std::endl;
+	std::cout << "1 boat: " << boat->GetDistance() << std::endl;
+	std::cout << "2 boatplane: " << boatplane->GetDistance() << std::endl;
+	std::cout << "3 motorcycle: " << motorcycle->GetDistance() << std::endl;
+	std::cout << "4 sedan: " << sedan->GetDistance() << std::endl;
+	std::cout << "5 sedan2: " << sedan2->GetDistance() << std::endl;
+	std::cout << "6 uboat: " << uboat->GetDistance() << std::endl;
+	std::cout << std::endl;
+	deusExMachina1->Travel(); // 트레일러 달린 Sedan만 이동 5
+	std::cout << "0 airplane: " << airplane->GetDistance() << std::endl;
+	std::cout << "1 boat: " << boat->GetDistance() << std::endl;
+	std::cout << "2 boatplane: " << boatplane->GetDistance() << std::endl;
+	std::cout << "3 motorcycle: " << motorcycle->GetDistance() << std::endl;
+	std::cout << "4 sedan: " << sedan->GetDistance() << std::endl;
+	std::cout << "5 sedan2: " << sedan2->GetDistance() << std::endl;
+	std::cout << "6 uboat: " << uboat->GetDistance() << std::endl;
+	std::cout << std::endl;
+
+	std::cout << deusExMachina1->GetFurthestTravelled() << std::endl;
+	assert(deusExMachina1->GetFurthestTravelled() == boat);
 
 	system("pause");
 	return 0;

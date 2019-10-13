@@ -51,12 +51,18 @@ namespace assignment2
 		delete mPassengers[i];
 		for (size_t j = i; j < mPassengerCount - 1; j++)
 		{
-			mPassengers[i] = mPassengers[i + 1];
+			mPassengers[j] = mPassengers[j + 1];
 		}
 		mPassengerCount--;
 
 		return true;
 	}
+
+	unsigned int Vehicle::GetDistance() const
+	{
+		return mDistance;
+	}
+
 
 	unsigned int Vehicle::GetPassengersCount() const
 	{

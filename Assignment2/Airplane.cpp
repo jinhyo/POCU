@@ -58,7 +58,7 @@ namespace assignment2
 	// 수정이 필요할지도?
 	unsigned int Airplane::GetMaxSpeed() const
 	{
-		if (mFlySpeed > mDriveSpeed)
+		if (GetFlySpeed() > GetDriveSpeed())
 		{
 			return mFlySpeed;
 		}

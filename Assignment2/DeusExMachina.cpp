@@ -31,7 +31,7 @@ namespace assignment2
 	{
 		for (size_t i = 0; i < mMachineCount; i++)
 		{
-			mMachineList[mMachineCount]->Move();
+			mMachineList[i]->Move();
 		}
 	}
 
@@ -50,11 +50,11 @@ namespace assignment2
 	{
 		if (i < mMachineCount)
 		{
-			delete mMachineList[i];
+			//delete mMachineList[i];
 			mMachineList[i] = NULL;
 			for (size_t j = i; j < mMachineCount - 1; j++)
 			{
-				mMachineList[i] = mMachineList[i + 1];
+				mMachineList[j] = mMachineList[j + 1];
 			}
 			mMachineCount--;
 
@@ -70,12 +70,12 @@ namespace assignment2
 			return NULL;
 		}
 
-		if (mMachineList[0]->GetMoveCount() == 0)
+		if (mMachineList[0]->GetDistance() == 0)
 		{
 			return mMachineList[0];
 		}
 
-		unsigned int index;
+		unsigned int index = 0;
 		for (size_t i = 1; i < mMachineCount; i++)
 		{
 			unsigned int maxSpeed = mMachineList[0]->GetMaxSpeed();

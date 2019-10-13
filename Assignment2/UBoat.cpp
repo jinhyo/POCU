@@ -35,7 +35,7 @@ namespace assignment2
 
 	unsigned int UBoat::GetMaxSpeed() const
 	{
-		if (mDiveSpeed > mSailSpeed)
+		if (GetDiveSpeed() > GetSailSpeed())
 		{
 			return mDiveSpeed;
 		}
