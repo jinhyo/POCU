@@ -24,6 +24,7 @@ namespace assignment2
 				delete mPassengers[i];
 			}
 
+			// delete[] & mPassengers; ???
 			delete[] mPassengers;
 		}
 		

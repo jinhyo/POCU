@@ -39,7 +39,7 @@ int main()
 	//c->AddPassenger(p4);
 	//c->AddPassenger(p5);
 	//c->AddPassenger(p6);
-	
+	//
 
 	assert(a.GetMaxPassengersCount() == 5);
 	assert(a.GetPassengersCount() == 3);
@@ -49,10 +49,11 @@ int main()
 	assert(a.GetMaxSpeed() == 648);
 
 	//
-	//a.RemovePassenger(0);
-	//a.RemovePassenger(1);
-	//c->RemovePassenger(1);
-	//delete c;
+	/*a.RemovePassenger(0);
+	a.RemovePassenger(1);
+	c->RemovePassenger(1);
+	delete c;*/
+	//
 
 	Boat b(5);
 	b.AddPassenger(p4);
