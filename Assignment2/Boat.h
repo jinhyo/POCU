@@ -17,7 +17,10 @@ namespace assignment2
 		~Boat();
 
 		Boatplane operator+(Airplane& plane);
+
 		unsigned int GetMaxSpeed() const;
 		unsigned int GetDiveSpeed() const;
+		void Move();
+
 	};
 }

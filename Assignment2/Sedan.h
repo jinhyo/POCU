@@ -19,6 +19,7 @@ namespace assignment2
 
 		unsigned int GetMaxSpeed() const;
 		unsigned int GetDriveSpeed() const;
+		void Move();
 
 	private:
 		unsigned int mTrailerWeight = 0;

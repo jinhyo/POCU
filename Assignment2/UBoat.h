@@ -16,6 +16,7 @@ namespace assignment2
 		unsigned int GetDiveSpeed() const;
 		unsigned int GetSailSpeed() const;
 		unsigned int GetMaxSpeed() const;
+		void Move();
 
 	private:
 		// mutable 써도 되나?

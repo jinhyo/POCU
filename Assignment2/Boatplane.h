@@ -17,6 +17,7 @@ namespace assignment2
 		unsigned int GetFlySpeed() const;
 		unsigned int GetDiveSpeed() const;
 		unsigned int GetMaxSpeed() const;
+		void Move();
 
 		~Boatplane();
 

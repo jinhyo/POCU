@@ -50,4 +50,9 @@ namespace assignment2
 	{
 		return GetDiveSpeed();
 	}
+
+	void Boat::Move()
+	{
+
+	}
 }

@@ -72,4 +72,9 @@ namespace assignment2
 	{
 		return GetDriveSpeed();
 	}
+
+	void Sedan::Move()
+	{
+
+	}
 }

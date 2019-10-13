@@ -65,4 +65,17 @@ namespace assignment2
 
 		return mDriveSpeed;
 	}
+
+	void Airplane::Move()
+	{
+		if (mMoveCount < 1)
+		{
+			mMoveCount++;
+		}
+
+		if (mMoveCount == 1)
+		{
+
+		}
+	}
 }

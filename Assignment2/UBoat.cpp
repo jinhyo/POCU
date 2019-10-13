@@ -42,4 +42,9 @@ namespace assignment2
 
 		return mSailSpeed;
 	}
+
+	void UBoat::Move()
+	{
+
+	}
 }

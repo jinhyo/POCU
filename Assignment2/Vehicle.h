@@ -18,6 +18,7 @@ namespace assignment2
 		~Vehicle();
 
 		virtual unsigned int GetMaxSpeed() const = 0;
+		virtual void Move() = 0;
 
 		bool AddPassenger(const Person* person);
 		bool RemovePassenger(unsigned int i);
@@ -27,7 +28,10 @@ namespace assignment2
 		unsigned int GetMaxPassengersWeight() const;
 
 	private:
+		unsigned int mBreakCount = 0;
+		unsigned int mDistance = 0;
 		unsigned int mMaxPassengerNumber;
+		unsigned int mMoveCount = 0;
 		unsigned int mPassengerCount= 0;
 		const Person** mPassengers;
 	};

@@ -29,4 +29,9 @@ namespace assignment2
 	{
 		return mDriveSpeed;
 	}
+
+	void Motorcycle::Move()
+	{
+
+	}
 }

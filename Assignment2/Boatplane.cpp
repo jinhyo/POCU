@@ -74,4 +74,9 @@ namespace assignment2
 
 		return mDiveSpeed;
 	}
+
+	void Boatplane::Move()
+	{
+
+	}
 }

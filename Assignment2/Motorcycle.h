@@ -12,6 +12,7 @@ namespace assignment2
 
 		unsigned int GetDriveSpeed() const;
 		unsigned int GetMaxSpeed() const;
+		void Move();
 
 	private:
 		mutable double mDriveSpeed;
