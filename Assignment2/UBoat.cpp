@@ -60,6 +60,7 @@ namespace assignment2
 		if (mBreakCount == 4)
 		{
 			mMoveCount = 0;
+			mBreakCount = 0;
 		}
 	}
 }

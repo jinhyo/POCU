@@ -78,11 +78,12 @@ namespace assignment2
 		}
 
 		unsigned int index = 0;
+		unsigned int maxSpeed = mMachineList[0]->GetDistance();
 		for (size_t i = 1; i < mMachineCount; i++)
 		{
-			unsigned int maxSpeed = mMachineList[0]->GetMaxSpeed();
-			if (mMachineList[i]->GetMaxSpeed() > maxSpeed)
+			if (mMachineList[i]->GetDistance() > maxSpeed)
 			{
+				maxSpeed = mMachineList[i]->GetDistance();
 				index = i;
 			}
 		}

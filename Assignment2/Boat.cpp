@@ -69,6 +69,8 @@ namespace assignment2
 		if (mBreakCount == 1)
 		{
 			mMoveCount = 0;
+			mBreakCount = 0;
 		}
 	}
+
 }
