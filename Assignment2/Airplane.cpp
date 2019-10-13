@@ -40,7 +40,7 @@ namespace assignment2
 	unsigned int Airplane::GetFlySpeed() const
 	{
 		unsigned int x = GetMaxPassengersWeight();
-		mFlySpeed = 200 * pow(M_E, (-1 * x + 800) / 500.0);
+		mFlySpeed = 200 * static_cast<double>(pow(M_E, (-1.0 * x + 800) / 500.0));
 		mFlySpeed = static_cast<unsigned int>(mFlySpeed + 0.5);
 
 		return static_cast<unsigned int>(mFlySpeed);
@@ -49,7 +49,7 @@ namespace assignment2
 	unsigned int Airplane::GetDriveSpeed() const
 	{
 		unsigned int x = GetMaxPassengersWeight();
-		mDriveSpeed = 4 * pow(M_E, (-1 * x + 400) / 70.0);
+		mDriveSpeed = 4 * static_cast<double>(pow(M_E, (-1.0 * x + 400) / 70.0));
 		mDriveSpeed = static_cast<unsigned int>(mDriveSpeed + 0.5);
 
 		return static_cast<unsigned int>(mDriveSpeed);

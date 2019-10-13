@@ -36,7 +36,7 @@ namespace assignment2
 	unsigned int Boat::GetSailSpeed() const
 	{
 		unsigned int x = GetMaxPassengersWeight();
-		double speed = 800 - 10 * x;
+		double speed = static_cast < double>(800 - 10.0 * x);
 
 		if (speed > 20)
 		{

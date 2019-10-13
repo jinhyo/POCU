@@ -44,7 +44,7 @@ namespace assignment2
 	unsigned int Boatplane::GetFlySpeed() const
 	{
 		unsigned int x = GetMaxPassengersWeight();
-		mFlySpeed = 150 * pow(M_E, (-1 * x + 500) / 300.0);
+		mFlySpeed = 150 * static_cast<double>(pow(M_E, (-1.0 * x + 500) / 300.0));
 		mFlySpeed = static_cast<unsigned int>(mFlySpeed + 0.5);
 
 		return static_cast<unsigned int>(mFlySpeed);
