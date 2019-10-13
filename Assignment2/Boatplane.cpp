@@ -44,7 +44,7 @@ namespace assignment2
 	unsigned int Boatplane::GetFlySpeed() const
 	{
 		unsigned int x = GetMaxPassengersWeight();
-		mFlySpeed = 150.0 * static_cast<double>(pow(M_E, (-1.0 * x + 500) / 300.0));
+		mFlySpeed = 150 * static_cast<double>(pow(M_E, (-1.0 * x + 500) / 300.0));
 		mFlySpeed = static_cast<unsigned int>(mFlySpeed + 0.5);
 
 		return static_cast<unsigned int>(mFlySpeed);
@@ -53,7 +53,7 @@ namespace assignment2
 	unsigned int Boatplane::GetSailSpeed() const
 	{
 		unsigned int x = GetMaxPassengersWeight();
-		mSailSpeed = 800 - 1.7 * x;
+		mSailSpeed = 800.0 - 1.7 * x;
 		mSailSpeed = static_cast<unsigned int>(mSailSpeed + 0.5);
 
 		if (mSailSpeed > 20)

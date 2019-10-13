@@ -14,7 +14,7 @@ namespace assignment2
 	unsigned int Motorcycle::GetDriveSpeed() const
 	{
 		unsigned int x = GetMaxPassengersWeight();
-		mDriveSpeed = -1.0 * static_cast<double>(pow((x / 15.0), 3.0)) + 2.0 * x + 400.0;
+		mDriveSpeed = -1 * static_cast<double>(pow((x / 15.0), 3.0)) + 2.0 * x + 400.0;
 		mDriveSpeed = static_cast<unsigned int>(mDriveSpeed + 0.5);
 
 		if (mDriveSpeed > 0)
