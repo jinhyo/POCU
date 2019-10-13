@@ -75,6 +75,32 @@ namespace assignment2
 
 	void Sedan::Move()
 	{
+		if (mMoveCount < 5)
+		{
+			mMoveCount++;
+			mDistance += GetMaxSpeed();
+			return;
+		}
 
+		if (mMoveCount == 5)
+		{
+			mBreakCount++;
+		}
+
+		else if (mTrailerWeight == 0)
+		{
+			if (mBreakCount == 1)
+			{
+				mMoveCount = 0;
+			}
+		}
+
+		else if (mTrailerWeight != 0)
+		{
+			if (mBreakCount == 2)
+			{
+				mMoveCount = 0;
+			}
+		}
 	}
 }

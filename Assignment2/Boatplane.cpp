@@ -28,10 +28,10 @@ namespace assignment2
 		mPassengerCount = other.mPassengerCount;
 		mPassengers = other.mPassengers;
 
-		/*for (size_t i = 0; i < mPassengerCount; i++)
+		for (size_t i = 0; i < mPassengerCount; i++)
 		{
 			other.mPassengers[i] = NULL;
-		}*/
+		}
 		other.mPassengers = NULL;
 
 		return *this;
@@ -77,6 +77,21 @@ namespace assignment2
 
 	void Boatplane::Move()
 	{
+		if (mMoveCount < 1)
+		{
+			mMoveCount++;
+			mDistance += GetMaxSpeed();
+			return;
+		}
 
+		if (mMoveCount == 1)
+		{
+			mBreakCount++;
+		}
+
+		if (mBreakCount == 3)
+		{
+			mMoveCount = 0;
+		}
 	}
 }

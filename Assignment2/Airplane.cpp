@@ -71,11 +71,18 @@ namespace assignment2
 		if (mMoveCount < 1)
 		{
 			mMoveCount++;
+			mDistance += GetMaxSpeed();
+			return;
 		}
 
 		if (mMoveCount == 1)
 		{
+			mBreakCount++;
+		}
 
+		if (mBreakCount == 3)
+		{
+			mMoveCount = 0;
 		}
 	}
 }

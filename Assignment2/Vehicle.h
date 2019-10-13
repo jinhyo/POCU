@@ -26,13 +26,16 @@ namespace assignment2
 		unsigned int GetPassengersCount() const;
 		unsigned int GetMaxPassengersCount() const;
 		unsigned int GetMaxPassengersWeight() const;
+		unsigned int GetMoveCount() const;
 
 	private:
+		unsigned int mMaxPassengerNumber;
+		unsigned int mPassengerCount = 0;
+		const Person** mPassengers;
+
+	protected: 
 		unsigned int mBreakCount = 0;
 		unsigned int mDistance = 0;
-		unsigned int mMaxPassengerNumber;
 		unsigned int mMoveCount = 0;
-		unsigned int mPassengerCount= 0;
-		const Person** mPassengers;
 	};
 }

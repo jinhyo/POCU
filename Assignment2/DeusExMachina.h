@@ -18,7 +18,7 @@ namespace assignment2
 	private:
 		static unsigned int mDeusMachineCount;
 		static DeusExMachina* mDeusMachine;
-		const Vehicle* mMachineList[10];
+		Vehicle* mMachineList[10];
 		unsigned int mMachineCount = 0;
 	};
 }

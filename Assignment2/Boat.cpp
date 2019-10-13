@@ -53,6 +53,21 @@ namespace assignment2
 
 	void Boat::Move()
 	{
+		if (mMoveCount < 2)
+		{
+			mMoveCount++;
+			mDistance += GetMaxSpeed();
+			return;
+		}
 
+		if (mMoveCount == 2)
+		{
+			mBreakCount++;
+		}
+
+		if (mBreakCount == 1)
+		{
+			mMoveCount = 0;
+		}
 	}
 }

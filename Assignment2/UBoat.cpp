@@ -45,6 +45,21 @@ namespace assignment2
 
 	void UBoat::Move()
 	{
+		if (mMoveCount < 2)
+		{
+			mMoveCount++;
+			mDistance += GetMaxSpeed();
+			return;
+		}
 
+		if (mMoveCount == 2)
+		{
+			mBreakCount++;
+		}
+
+		if (mBreakCount == 4)
+		{
+			mMoveCount = 0;
+		}
 	}
 }

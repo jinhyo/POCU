@@ -88,4 +88,10 @@ namespace assignment2
 
 		return totalWeight;
 	}
+
+	unsigned int Vehicle::GetMoveCount() const
+	{
+		return mMoveCount;
+	}
+
 }

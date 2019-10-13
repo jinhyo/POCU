@@ -32,6 +32,21 @@ namespace assignment2
 
 	void Motorcycle::Move()
 	{
+		if (mMoveCount < 5)
+		{
+			mMoveCount++;
+			mDistance += GetMaxSpeed();
+			return;
+		}
 
+		if (mMoveCount == 5)
+		{
+			mBreakCount++;
+		}
+
+		if (mBreakCount == 1)
+		{
+			mMoveCount = 0;
+		}
 	}
 }
