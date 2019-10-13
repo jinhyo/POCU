@@ -43,7 +43,7 @@ namespace assignment2
 		mFlySpeed = 200 * pow(M_E, (-1 * x + 800) / 500.0);
 		mFlySpeed = static_cast<unsigned int>(mFlySpeed + 0.5);
 
-		return mFlySpeed;
+		return static_cast<unsigned int>(mFlySpeed);
 	}
 
 	unsigned int Airplane::GetDriveSpeed() const
@@ -52,7 +52,7 @@ namespace assignment2
 		mDriveSpeed = 4 * pow(M_E, (-1 * x + 400) / 70.0);
 		mDriveSpeed = static_cast<unsigned int>(mDriveSpeed + 0.5);
 
-		return mDriveSpeed;
+		return static_cast<unsigned int>(mDriveSpeed);
 	}
 
 	// 수정이 필요할지도?
@@ -60,10 +60,10 @@ namespace assignment2
 	{
 		if (GetFlySpeed() > GetDriveSpeed())
 		{
-			return mFlySpeed;
+			return static_cast<unsigned int>(mFlySpeed);
 		}
 
-		return mDriveSpeed;
+		return static_cast<unsigned int>(mDriveSpeed);
 	}
 
 	void Airplane::Move()
