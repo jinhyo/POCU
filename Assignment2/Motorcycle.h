@@ -15,6 +15,6 @@ namespace assignment2
 		void Move();
 
 	private:
-		mutable double mDriveSpeed;
+		mutable double mDriveSpeed = 0;
 	};
 }

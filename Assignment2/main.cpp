@@ -13,6 +13,7 @@
 #include "Person.h"
 
 using namespace assignment2;
+using namespace std;
 
 int main()
 {

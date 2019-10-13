@@ -12,7 +12,9 @@ namespace assignment2
 		{
 			delete mMachineList[i];
 		}
-		delete[] mMachineList;
+		
+		//delete[]  mMachineList;와 뭐가 다른건지...
+		delete[] & mMachineList;
 	}
 
 	DeusExMachina* DeusExMachina::GetInstance()
