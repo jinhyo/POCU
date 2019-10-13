@@ -19,7 +19,7 @@ namespace assignment2
 
 		if (mDriveSpeed > 0)
 		{
-			return mDriveSpeed;
+			return static_cast<unsigned int>(mDriveSpeed);
 		}
 
 		return 0;

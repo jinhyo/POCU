@@ -1,0 +1,10 @@
+diff a/Assignment2/Airplane.cpp b/Assignment2/Airplane.cpp	(rejected hunks)
+@@ -43,7 +43,7 @@
+ 		mFlySpeed = 200 * pow(M_E, (-1 * x + 800) / 500.0);
+ 		mFlySpeed = static_cast<unsigned int>(mFlySpeed + 0.5);
+ 
+-		return mFlySpeed;
++		return static_cast<unsigned int>(mFlySpeed);
+ 	}
+ 
+ 	unsigned int Airplane::GetDriveSpeed() const

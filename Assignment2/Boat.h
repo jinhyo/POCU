@@ -2,15 +2,14 @@
 
 #include "Airplane.h"
 #include "Boatplane.h"
-#include "IFlyable.h"
-#include "IDivable.h"
+#include "ISailable.h"
 #include "Vehicle.h"
 
 namespace assignment2
 {
 	class Airplane;
 
-	class Boat : public IDivable, public Vehicle
+	class Boat : public ISailable, public Vehicle
 	{
 	public:
 		Boat(unsigned int maxPassengersCount);
@@ -19,7 +18,7 @@ namespace assignment2
 		Boatplane operator+(Airplane& plane);
 
 		unsigned int GetMaxSpeed() const;
-		unsigned int GetDiveSpeed() const;
+		unsigned int GetSailSpeed() const;
 		void Move();
 
 	};

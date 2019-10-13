@@ -17,7 +17,7 @@ namespace assignment2
 		mDiveSpeed = 500 * static_cast<double>(log((x + 150) / 150.0)) + 30;
 		mDiveSpeed = static_cast<unsigned int>(mDiveSpeed + 0.5);
 
-		return mDiveSpeed;
+		return static_cast<unsigned int>(mDiveSpeed);
 	}
 
 	unsigned int UBoat::GetSailSpeed() const
@@ -27,7 +27,7 @@ namespace assignment2
 		mSailSpeed = static_cast<unsigned int>(mSailSpeed + 0.5);
 		if (mSailSpeed > 200)
 		{
-			return mSailSpeed;
+			return static_cast<unsigned int>(mSailSpeed);
 		}
 
 		return 200;
@@ -37,10 +37,10 @@ namespace assignment2
 	{
 		if (GetDiveSpeed() > GetSailSpeed())
 		{
-			return mDiveSpeed;
+			return static_cast<unsigned int>(mDiveSpeed);
 		}
 
-		return mSailSpeed;
+		return static_cast<unsigned int>(mSailSpeed);
 	}
 
 	void UBoat::Move()

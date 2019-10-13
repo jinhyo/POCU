@@ -1,4 +1,5 @@
 #include "Boat.h"
+#include "Airplane.h"
 
 namespace assignment2
 {
@@ -32,7 +33,7 @@ namespace assignment2
 		return bp;
 	}
 
-	unsigned int Boat::GetDiveSpeed() const
+	unsigned int Boat::GetSailSpeed() const
 	{
 		unsigned int x = GetMaxPassengersWeight();
 		double speed = 800 - 10 * x;
@@ -48,7 +49,7 @@ namespace assignment2
 	// 수정이 필요할지도?
 	unsigned int Boat::GetMaxSpeed() const
 	{
-		return GetDiveSpeed();
+		return GetSailSpeed();
 	}
 
 	void Boat::Move()

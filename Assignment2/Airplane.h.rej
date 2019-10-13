@@ -1,0 +1,9 @@
+diff a/Assignment2/Airplane.h b/Assignment2/Airplane.h	(rejected hunks)
+@@ -26,5 +26,6 @@
+ 	private:
+ 		mutable double mDriveSpeed;
+ 		mutable double mFlySpeed;
++		unsigned int mMaxPassengersNumber;
+ 	};
+ }
+\ No newline at end of file

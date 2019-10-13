@@ -26,6 +26,6 @@ namespace assignment2
 	private:
 		mutable double mDriveSpeed;
 		mutable double mFlySpeed;
-		unsigned int mMaxPassengersNumber;
+		unsigned int maxPassengersNumber;
 	};
 }

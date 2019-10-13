@@ -4,10 +4,11 @@
 
 #include "Vehicle.h"
 #include "IDivable.h"
+#include "ISailable.h"
 
 namespace assignment2
 {
-	class UBoat : public IDivable, public Vehicle
+	class UBoat : public IDivable, public ISailable, public Vehicle
 	{
 	public:
 		UBoat();

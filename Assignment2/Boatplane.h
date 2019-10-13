@@ -1,13 +1,15 @@
 #pragma once
 
 #include "IFlyable.h"
-#include "IDivable.h"
+#include "ISailable.h"
 #include "Vehicle.h"
+#include "Airplane.h"
+#include "Boat.h"
 
 
 namespace assignment2
 {
-	class Boatplane : public Vehicle, public IFlyable, public IDivable
+	class Boatplane : public Vehicle, public IFlyable, public ISailable
 	{
 	public:
 		Boatplane(unsigned int maxPassengersCount);
@@ -15,7 +17,7 @@ namespace assignment2
 		Boatplane& operator=(Boatplane&& other);
 
 		unsigned int GetFlySpeed() const;
-		unsigned int GetDiveSpeed() const;
+		unsigned int GetSailSpeed() const;
 		unsigned int GetMaxSpeed() const;
 		void Move();
 
@@ -23,6 +25,6 @@ namespace assignment2
 
 	private:
 		mutable double mFlySpeed;
-		mutable double mDiveSpeed;
+		mutable double mSailSpeed;
 	};
 }
