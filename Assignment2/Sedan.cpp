@@ -47,22 +47,22 @@ namespace assignment2
 			return 480;
 		}
 
-		else if (x > 80 && x <= 160)
+		if (x > 80 && x <= 160)
 		{
 			return 458;
 		}
 
-		else if (x > 160 && x <= 260)
+		if (x > 160 && x <= 260)
 		{
 			return 400;
 		}
 
-		else if (x > 260 && x <= 350)
+		if (x > 260 && x <= 350)
 		{
 			return 380;
 		}
 
-		else if (x > 350)
+		if (x > 350)
 		{
 			return 300;
 		}
