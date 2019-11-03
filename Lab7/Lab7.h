@@ -81,7 +81,7 @@ namespace lab7
 
 		for (itrV1 = v1.begin(); itrV1 != v1.end(); itrV1++)
 		{
-			for (itrTemp = temp.begin(); itrTemp != temp.end(); )
+			for (itrTemp = temp.begin(); itrTemp != temp.end();)
 			{
 				if (*itrV1 == *itrTemp)
 				{
