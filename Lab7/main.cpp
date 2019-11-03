@@ -52,11 +52,12 @@ int main()
 		cout << v3[i] << endl;
 	}
 
+	cout << endl;
 	for (;itr != combinedVector.end(); itr++)
 	{
-		cout << *itr << endl;
+		cout << *itr << " ";
 	}
-
+	cout << endl;
 	
 	/*std::map<int, char> m = lab7::ConvertVectorsToMap(v1, v2);
 	{
@@ -137,8 +138,8 @@ int main()
 		assert(it->second == 6);
 	}*/
 
-	std::cout << v1 << std::endl;
-	std::cout << m1 << std::endl;
+	/*std::cout << v1 << std::endl;
+	std::cout << m1 << std::endl;*/
 
 	system("pause");
 

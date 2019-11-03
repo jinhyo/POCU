@@ -74,20 +74,42 @@ namespace lab7
 	std::vector<T> operator+(const std::vector<T>& v1, const std::vector<T>& v2)
 	{
 		std::vector<T> combined;
-		combined.reserve(v1.size() + v2.size());
+		std::vector<T> temp(v2);
+
+		typename vector<T>::const_iterator itrV1;
+		typename vector<T>::iterator itrTemp;
+
+		for (itrV1 = v1.begin(); itrV1 != v1.end(); itrV1++)
+		{
+			for (itrTemp = temp.begin(); itrTemp != temp.end(); )
+			{
+				if (*itrV1 == *itrTemp)
+				{
+					itrTemp = temp.erase(itrTemp);
+				}
+				else
+				{
+					itrTemp++;
+				}
+			}
+		}
+		for (size_t i = 0; i < temp.size(); i++)
+		{
+			cout <<"temp"<< temp[i] << endl;
+		}
+
+		combined.reserve(v1.size() + temp.size());
+
 		for (size_t i = 0; i < v1.size(); i++)
 		{
 			combined.push_back(v1[i]);
 		}
 
-		for (size_t i = 0; i < v2.size(); i++)
+		for (size_t i = 0; i < temp.size(); i++)
 		{
-			combined.push_back(v2[i]);
+			combined.push_back(temp[i]);
 		}
 
-	/*	sort(combined.begin(), combined.end());
-		combined.erase(unique(combined.begin(), combined.end()), combined.end());
-		std::vector<T> combined2(combined);*/
 		return combined;
 	}
 
