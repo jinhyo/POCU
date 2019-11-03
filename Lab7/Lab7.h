@@ -87,8 +87,8 @@ namespace lab7
 
 		sort(combined.begin(), combined.end());
 		combined.erase(unique(combined.begin(), combined.end()), combined.end());
-
-		return combined;
+		std::vector<T> combined2(combined);
+		return combined2;
 	}
 
 	template <typename K, class V>
@@ -113,10 +113,13 @@ namespace lab7
 	template<typename T>
 	std::ostream& operator<<(std::ostream& os, const std::vector<T>& v)
 	{
-		for (size_t i = 0; i < v.size(); i++)
+		int i = 0;
+		for (; i < v.size()-1; i++)
 		{
 			os << v[i] << ", ";
 		}
+		os << v[i];
+
 		return os;
 	}
 
