@@ -46,28 +46,29 @@ namespace lab7
 		return v;
 	}
 
-	template <typename T>
-	std::vector<T> Reverse(const std::vector<T>& v)
-	{
-		std::vector<T> rv;
-		/*typename vector<T>::reverse_iterator itr = v.rbegin();
-		for (; itr != v.rend(); itr++)
-		{
-			rv.push_back(*itr);
-		}*/
+	//template <typename T>
+	//std::vector<T> Reverse(const std::vector<T>& v)
+	//{
+	//	std::vector<T> rv;
 
-		typename vector<T>::const_iterator itr = v.end() - 1;
-		for (; ; itr--)
-		{
-			rv.push_back(*itr);
-			if (itr == v.begin())
-			{
-				break;
-			}
-		}
+	//	/*typename vector<T>::reverse_iterator itr = v.rbegin();
+	//	for (; itr != v.rend(); itr++)
+	//	{
+	//		rv.push_back(*itr);
+	//	}*/
 
-		return rv;
-	}
+	//	typename vector<T>::const_iterator itr = v.end() - 1;
+	//	for (; ; itr--)
+	//	{
+	//		rv.push_back(*itr);
+	//		if (itr == v.begin())
+	//		{
+	//			break;
+	//		}
+	//	}
+
+	//	return rv;
+	//}
 
 	template <typename T>
 	std::vector<T> operator+(const std::vector<T>& v1, const std::vector<T>& v2)
@@ -79,7 +80,7 @@ namespace lab7
 			combined.push_back(v1[i]);
 		}
 
-		for (size_t i = 0; i < v1.size(); i++)
+		for (size_t i = 0; i < v2.size(); i++)
 		{
 			combined.push_back(v2[i]);
 		}
