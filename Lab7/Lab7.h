@@ -105,11 +105,8 @@ namespace lab7
 		{
 			combined.push_back(temp[i]);
 		}
-		sort(combined.begin(), combined.end());
-		combined.erase(unique(combined.begin(), combined.end()), combined.end());
-		std::vector<T> combined2(combined);
 
-		return combined2;
+		return combined;
 	}
 
 	template <typename K, class V>
