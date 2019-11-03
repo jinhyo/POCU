@@ -46,29 +46,29 @@ namespace lab7
 		return v;
 	}
 
-	//template <typename T>
-	//std::vector<T> Reverse(const std::vector<T>& v)
-	//{
-	//	std::vector<T> rv;
+	template <typename T>
+	std::vector<T> Reverse(const std::vector<T>& v)
+	{
+		std::vector<T> rv;
 
-	//	/*typename vector<T>::reverse_iterator itr = v.rbegin();
-	//	for (; itr != v.rend(); itr++)
-	//	{
-	//		rv.push_back(*itr);
-	//	}*/
+		/*typename vector<T>::reverse_iterator itr = v.rbegin();
+		for (; itr != v.rend(); itr++)
+		{
+			rv.push_back(*itr);
+		}*/
 
-	//	typename vector<T>::const_iterator itr = v.end() - 1;
-	//	for (; ; itr--)
-	//	{
-	//		rv.push_back(*itr);
-	//		if (itr == v.begin())
-	//		{
-	//			break;
-	//		}
-	//	}
+		typename vector<T>::const_iterator itr = v.end() - 1;
+		for (; ; itr--)
+		{
+			rv.push_back(*itr);
+			if (itr == v.begin())
+			{
+				break;
+			}
+		}
 
-	//	return rv;
-	//}
+		return rv;
+	}
 
 	template <typename T>
 	std::vector<T> operator+(const std::vector<T>& v1, const std::vector<T>& v2)
