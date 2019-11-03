@@ -93,10 +93,6 @@ namespace lab7
 				}
 			}
 		}
-		for (size_t i = 0; i < temp.size(); i++)
-		{
-			cout <<"temp"<< temp[i] << endl;
-		}
 
 		combined.reserve(v1.size() + temp.size());
 
@@ -109,8 +105,11 @@ namespace lab7
 		{
 			combined.push_back(temp[i]);
 		}
+		sort(combined.begin(), combined.end());
+		combined.erase(unique(combined.begin(), combined.end()), combined.end());
+		std::vector<T> combined2(combined);
 
-		return combined;
+		return combined2;
 	}
 
 	template <typename K, class V>
