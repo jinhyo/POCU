@@ -12,7 +12,7 @@ namespace assignment2
 	{
 	}
 
-	const std::string& Person::GetName() const
+	const char* Person::GetName() const
 	{
 		return mName;
 	}

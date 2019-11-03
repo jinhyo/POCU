@@ -44,8 +44,8 @@ namespace assignment2
 	unsigned int Boatplane::GetFlySpeed() const
 	{
 		unsigned int x = GetMaxPassengersWeight();
-		mFlySpeed = 150 * static_cast<double>(pow(M_E, (-1.0 * x + 500) / 300.0));
-		mFlySpeed = static_cast<unsigned int>(mFlySpeed + 0.5);
+		mFlySpeed = 150.0 * exp((-1.0 * x + 500.0) / 300.0);
+		mFlySpeed = static_cast<unsigned int>(round(mFlySpeed));
 
 		return static_cast<unsigned int>(mFlySpeed);
 	}
@@ -54,25 +54,17 @@ namespace assignment2
 	{
 		unsigned int x = GetMaxPassengersWeight();
 		mSailSpeed = 800.0 - 1.7 * x;
-		mSailSpeed = static_cast<unsigned int>(mSailSpeed + 0.5);
+		mSailSpeed = static_cast<unsigned int>(round(mSailSpeed));
 
-		if (mSailSpeed > 20)
-		{
-			return static_cast<unsigned int>(mSailSpeed);
-		}
-
-		return 20;
+		// 코드 수정
+		return mSailSpeed > 20 ? mSailSpeed : 20;
 	}
 
 	// 수정이 필요할지도?
 	unsigned int Boatplane::GetMaxSpeed() const
 	{
-		if (GetFlySpeed() > GetSailSpeed())
-		{
-			return static_cast<unsigned int>(mFlySpeed);
-		}
-
-		return static_cast<unsigned int>(mSailSpeed);
+		// 코드 수정
+		return GetFlySpeed() > GetSailSpeed() ? mFlySpeed : mSailSpeed;
 	}
 
 	void Boatplane::Move()

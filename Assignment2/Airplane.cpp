@@ -20,13 +20,13 @@ namespace assignment2
 		for (size_t i = 0; i < GetPassengersCount(); i++)
 		{
 			bp.AddPassenger(GetPassenger(i));
-			mPassengers[i] = NULL;
+			//mPassengers[i] = NULL;
 		}
 
 		for (size_t i = 0; i < boat.GetPassengersCount(); i++)
 		{
 			bp.AddPassenger(boat.GetPassenger(i));
-			boat.mPassengers[i] = NULL;
+			//boat.mPassengers[i] = NULL;
 		}
 
 		

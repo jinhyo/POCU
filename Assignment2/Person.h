@@ -10,11 +10,11 @@ namespace assignment2
 		Person(const char* name, unsigned int weight);
 		~Person();
 
-		const std::string& GetName() const;
+		const char* GetName() const;
 		unsigned int GetWeight() const;
 
 	private:
-		std::string mName;
+		const char* mName;
 		int mWeight;
 	};
 }

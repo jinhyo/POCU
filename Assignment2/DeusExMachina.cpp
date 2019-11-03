@@ -13,8 +13,7 @@ namespace assignment2
 			delete mMachineList[i];
 		}
 		
-		//delete[]  mMachineList;와 뭐가 다른건지...
-		delete[] & mMachineList;
+		//delete[]  mMachineList; 다른 코드에서는 이게 없음(스택에 생성되서)
 	}
 
 	DeusExMachina* DeusExMachina::GetInstance()
@@ -24,7 +23,7 @@ namespace assignment2
 			return mDeusMachine;
 		}
 
-		mDeusMachine = new DeusExMachina;
+		mDeusMachine = new DeusExMachina();
 		mDeusMachineCount++;
 		return mDeusMachine;
 	}
@@ -39,6 +38,13 @@ namespace assignment2
 
 	bool DeusExMachina::AddVehicle(Vehicle* vehicle)
 	{
+		// 추가 코드
+		if (vehicle == nullptr)
+		{
+			return false;
+		}
+		//
+
 		if (mMachineCount < 10)
 		{
 			mMachineList[mMachineCount++] = vehicle;
@@ -50,18 +56,19 @@ namespace assignment2
 
 	bool DeusExMachina::RemoveVehicle(unsigned int i)
 	{
+
 		if (i < mMachineCount)
 		{
-			//delete mMachineList[i];
-			mMachineList[i] = NULL;
-			for (size_t j = i; j < mMachineCount - 1; j++)
-			{
-				mMachineList[j] = mMachineList[j + 1];
-			}
+			delete mMachineList[i];
 			mMachineCount--;
+			for (; i < mMachineCount; i++)
+			{
+				mMachineList[i] = mMachineList[i + 1];
+			}
 
 			return true;
 		}
+
 		return false;
 	}
 

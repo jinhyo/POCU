@@ -14,16 +14,16 @@ namespace assignment2
 
 	Boatplane Boat::operator+(Airplane& plane)
 	{
-		unsigned int bMaxNumber = GetMaxPassengersCount() + plane.GetMaxPassengersCount();
-		Boatplane bp(bMaxNumber);
-		for (size_t i = 0; i < GetPassengersCount(); i++)
-		{
-			bp.AddPassenger(GetPassenger(i));
-		}
-
+		// 수정
+		Boatplane bp(GetMaxPassengersCount() + plane.GetMaxPassengersCount());
 		for (size_t i = 0; i < plane.GetPassengersCount(); i++)
 		{
 			bp.AddPassenger(plane.GetPassenger(i));
+		}
+
+		for (size_t i = 0; i < GetPassengersCount(); i++)
+		{
+			bp.AddPassenger(GetPassenger(i));
 		}
 
 		// friend class로 처리하는게 맞는걸까?
@@ -36,7 +36,7 @@ namespace assignment2
 	unsigned int Boat::GetSailSpeed() const
 	{
 		unsigned int x = GetMaxPassengersWeight();
-		double speed = static_cast < double>(800 - 10.0 * x);
+		double speed = static_cast <double>(800 - 10.0 * x);
 
 		if (speed > 20)
 		{

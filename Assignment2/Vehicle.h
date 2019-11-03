@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string>
 #include "Person.h"
 
 # define M_E (2.7182818284590452354)
@@ -15,7 +16,10 @@ namespace assignment2
 		
 		Vehicle();
 		Vehicle(unsigned int maxPassengersCount);
+		Vehicle(const Vehicle& other);
 		~Vehicle();
+
+		Vehicle& operator = (const Vehicle & other);
 
 		virtual unsigned int GetMaxSpeed() const = 0;
 		virtual void Move() = 0;
