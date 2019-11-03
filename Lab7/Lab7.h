@@ -50,11 +50,22 @@ namespace lab7
 	std::vector<T> Reverse(const std::vector<T>& v)
 	{
 		std::vector<T> rv;
-		typename vector<T>::reverse_iterator itr = v.rbegin();
+		/*typename vector<T>::reverse_iterator itr = v.rbegin();
 		for (; itr != v.rend(); itr++)
 		{
 			rv.push_back(*itr);
+		}*/
+
+		typename vector<T>::const_iterator itr = v.end() - 1;
+		for (; ; itr--)
+		{
+			rv.push_back(*itr);
+			if (itr == v.begin())
+			{
+				break;
+			}
 		}
+
 		return rv;
 	}
 
