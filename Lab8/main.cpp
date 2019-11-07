@@ -3,6 +3,7 @@
 #include "FixedVector.h"
 #include "FixedBoolVector.h"
 
+using namespace lab8;
 
 int main()
 {
