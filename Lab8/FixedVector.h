@@ -18,7 +18,7 @@ namespace lab8
 		T& operator[](unsigned index);
 
 	private:
-		unsigned mSize;
+		size_t mSize;
 		T mArray[N];
 
 	};

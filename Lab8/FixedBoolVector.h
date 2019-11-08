@@ -20,9 +20,8 @@ namespace lab8
 		const bool operator[](unsigned index);
 
 	private:
-		unsigned mSize;
-		bool mArray[N];
-
+		size_t mSize;
+		int32_t mArray[(N - 1) / 32 + 1] = { 0 };
 	};
 
 	template <size_t N>
@@ -32,24 +31,38 @@ namespace lab8
 	}
 
 	template <size_t N>
-	bool FixedVector<bool, N>::Add(bool data)
+	bool FixedVector<bool, N>::Add(bool bData)
 	{
 		if (mSize >= N)
 		{
 			return false;
 		}
-		mArray[mSize++] = data;
+		
+		else
+		{
+			if (bData == true)
+			{
+				mArray[mSize / 32] |= (1 << mSize % 32);
+				mSize++;
+			}
+
+			else
+			{
+				mArray[mSize / 32] &= ~(1 << mSize % 32);
+				mSize++;
+			}
+		}
 
 		return true;
 	}
 
 	template <size_t N>
-	bool FixedVector<bool, N>::Remove(bool data)
+	bool FixedVector<bool, N>::Remove(bool bData)
 	{
 		unsigned i = 0;
 		for (; i < mSize; i++)
 		{
-			if (mArray[i] == data)
+			if (mArray[i] == bData)
 			{
 				for (; i < mSize - 1; i++)
 				{
@@ -71,11 +84,11 @@ namespace lab8
 	}
 
 	template <size_t N>
-	int FixedVector<bool, N>::GetIndex(bool data)
+	int FixedVector<bool, N>::GetIndex(bool bData)
 	{
 		for (size_t i = 0; i < mSize; i++)
 		{
-			if (mArray[i] == data)
+			if (mArray[i] == bData)
 			{
 				return i;
 			}
