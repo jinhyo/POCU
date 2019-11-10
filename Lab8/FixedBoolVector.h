@@ -21,7 +21,7 @@ namespace lab8
 
 	private:
 		size_t mSize;
-		int32_t mArray[(N - 1) / 32 + 1] = { 0 };
+		int32_t mArray[((N - 1) / 32) + 1] = { 0 };
 	};
 
 	template <size_t N>
@@ -30,6 +30,7 @@ namespace lab8
 	{
 	}
 
+	// 완료
 	template <size_t N>
 	bool FixedVector<bool, N>::Add(bool bData)
 	{
@@ -48,7 +49,7 @@ namespace lab8
 
 			else
 			{
-				mArray[mSize / 32] &= ~(1 << mSize % 32);
+				mArray[mSize / 32] &= ~(1 << mSize % 32); // 이 줄은 없어도 될 듯
 				mSize++;
 			}
 		}
@@ -112,7 +113,7 @@ namespace lab8
 	template <size_t N>
 	const bool FixedVector<bool, N>::operator[](unsigned index)
 	{
-		return mArray[index];
+		return ;
 	}
 
 }

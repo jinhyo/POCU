@@ -84,7 +84,7 @@ int main()
 	assert(sq.GetVariance() == 49.564);
 	assert(sq.GetStandardDeviation() == 7.040);
 
-	QueueStack<float> qs(3);
+	/*QueueStack<float> qs(3);
 
 	qs.Enqueue(3.4f);
 	qs.Enqueue(1.2f);
@@ -119,7 +119,7 @@ int main()
 	assert(qs.GetMax() == 10.2f);
 	assert(qs.GetMin() == -12.4f);
 	assert(qs.GetSum() == 6.62000322f);
-	assert(qs.GetAverage() == 0.946);
+	assert(qs.GetAverage() == 0.946);*/
 
 	return 0;
 }

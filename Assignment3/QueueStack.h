@@ -7,7 +7,6 @@
 
 namespace assignment3
 {
-	
 	template <typename T>
 	class QueueStack
 	{
@@ -35,7 +34,6 @@ namespace assignment3
 		unsigned mCount;
 		unsigned mMaxStackSize;
 		double mBeforeVariance;
-
 	};
 	
 
@@ -48,10 +46,16 @@ namespace assignment3
 	}
 
 	template <typename T>
-	T assignment3::QueueStack<T>::Peek();
+	T assignment3::QueueStack<T>::Peek()
+	{
+		return 0;
+	}
 
 	template <typename T>
-	T assignment3::QueueStack<T>::Dequeue();
+	T assignment3::QueueStack<T>::Dequeue()
+	{
+		return 0;
+	}
 
 	template <typename T>
 	T assignment3::QueueStack<T>::GetMax()
@@ -100,7 +104,7 @@ namespace assignment3
 
 			else if (is_same<T, unsigned long>::value)
 			{
-				mMaxQ.push(0);
+				return 0;
 			}
 
 			else if (is_same<T, unsigned long long>::value)
@@ -128,8 +132,10 @@ namespace assignment3
 				return LDBL_MIN;
 			}
 		}
-		
+
+		//
 		else
+			return 0;
 
 	}
 
@@ -210,6 +216,8 @@ namespace assignment3
 		}
 
 		else
+			return 0;
+
 
 	}
 
@@ -222,13 +230,14 @@ namespace assignment3
 	template <typename T>
 	void assignment3::QueueStack<T>::Enqueue(T number)
 	{
+		return;
 
 	}
 
 	template <typename T>
 	double assignment3::QueueStack<T>::GetAverage()
 	{
-
+		return 0;
 	}
 
 	template <typename T>
