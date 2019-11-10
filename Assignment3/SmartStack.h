@@ -14,7 +14,7 @@ namespace assignment3
 	{
 	public:
 		SmartStack();
-		// Push 단계에서 Max, Min, Sum값 저장 필요
+		// Push 단계에서 Max, Min, Sum, variance 이전 값 저장 필요
 
 		T Pop();
 		T Peek();
@@ -31,8 +31,8 @@ namespace assignment3
 	private:
 		stack<T> mMaxStack;
 		stack<T> mMinStack;
-		stack<T> st1;
-		stack<T> st2;
+		stack<T> mSt1;
+		stack<T> mSt2;
 		T mSum;
 		double mBeforeVariance;
 	};
@@ -42,8 +42,7 @@ namespace assignment3
 // 완료
 template <typename T>
 assignment3::SmartStack<T>::SmartStack()
-	: mBeforeVariance(0)
-	, mSum(0)
+	: mSum(0)
 {
 	// 간단한 방법은 없나?
 	if (is_same<T, char>::value)
@@ -135,7 +134,7 @@ assignment3::SmartStack<T>::SmartStack()
 template <typename T>
 void assignment3::SmartStack<T>::Push(T number)
 {
-	st1.push(number);
+	mSt1.push(number);
 
 	if (mMaxStack.top() < number)
 	{
@@ -158,22 +157,22 @@ void assignment3::SmartStack<T>::Push(T number)
 	}
 
 	mSum += number;
-	double average = static_cast<double>(mSum) / st1.size();
+	double average = static_cast<double>(mSum) / mSt1.size();
 	mBeforeVariance = 0;
 
-	unsigned temp = st1.size();
+	unsigned temp = mSt1.size();
 	for (size_t i = 0; i < temp; i++)
 	{
-		mBeforeVariance += (st1.top() - average) * (st1.top() - average);
-		st2.push(st1.top());
-		st1.pop();
+		mBeforeVariance += (mSt1.top() - average) * (mSt1.top() - average);
+		mSt2.push(mSt1.top());
+		mSt1.pop();
 	}
 
-	temp = st2.size();
+	temp = mSt2.size();
 	for (size_t i = 0; i < temp; i++)
 	{
-		st1.push(st2.top());
-		st2.pop();
+		mSt1.push(mSt2.top());
+		mSt2.pop();
 	}
 }
 
@@ -183,26 +182,26 @@ T assignment3::SmartStack<T>::Pop()
 {
 	mMaxStack.pop();
 	mMinStack.pop();
-	T popReturn = st1.top();
-	mSum -= st1.top();
-	st1.pop();
+	T popReturn = mSt1.top();
+	mSum -= mSt1.top();
+	mSt1.pop();
 
-	double average = static_cast<double>(mSum) / st1.size();
+	double average = static_cast<double>(mSum) / mSt1.size();
 	mBeforeVariance = 0;
 
-	unsigned temp = st1.size();
+	unsigned temp = mSt1.size();
 	for (size_t i = 0; i < temp; i++)
 	{
-		mBeforeVariance += (st1.top() - average) * (st1.top() - average);
-		st2.push(st1.top());
-		st1.pop();
+		mBeforeVariance += (mSt1.top() - average) * (mSt1.top() - average);
+		mSt2.push(mSt1.top());
+		mSt1.pop();
 	}
 
-	temp = st2.size();
+	temp = mSt2.size();
 	for (size_t i = 0; i < temp; i++)
 	{
-		st1.push(st2.top());
-		st2.pop();
+		mSt1.push(mSt2.top());
+		mSt2.pop();
 	}
 
 	return popReturn;
@@ -212,7 +211,7 @@ T assignment3::SmartStack<T>::Pop()
 template <typename T>
 T assignment3::SmartStack<T>::Peek()
 {
-	return st1.top();
+	return mSt1.top();
 }
 
 // 완료
@@ -240,8 +239,9 @@ T assignment3::SmartStack<T>::GetSum()
 template <typename T>
 double assignment3::SmartStack<T>::GetAverage()
 {
-	double average = static_cast<double>(mSum) / st1.size();
+	double average = static_cast<double>(mSum) / mSt1.size();
 	average = static_cast<int>((average + 0.0005) * 1000);
+
 	return static_cast<double>(average) / 1000;
 }
 
@@ -249,14 +249,14 @@ double assignment3::SmartStack<T>::GetAverage()
 template <typename T>
 unsigned assignment3::SmartStack<T>::GetCount()
 {
-	return st1.size();
+	return mSt1.size();
 }
 
 // 완료
 template <typename T>
 double assignment3::SmartStack<T>::GetVariance()
 {
-	double variance = mBeforeVariance / st1.size();
+	double variance = mBeforeVariance / mSt1.size();
 	variance = static_cast<int>((variance + 0.0005) * 1000);
 
 	return static_cast<double>(variance) / 1000;
@@ -266,7 +266,7 @@ double assignment3::SmartStack<T>::GetVariance()
 template <typename T>
 double assignment3::SmartStack<T>::GetStandardDeviation()
 {
-	double sd = sqrt(mBeforeVariance / st1.size());
+	double sd = sqrt(mBeforeVariance / mSt1.size());
 	sd = static_cast<int>((sd + 0.0005) * 1000);
 	
 	return static_cast<double>(sd) / 1000;
