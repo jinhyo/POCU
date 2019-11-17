@@ -8,7 +8,7 @@ namespace lab9
 	class ObjectPool
 	{
 	public:
-		//ObjectPool() = default;
+		ObjectPool() = default;
 		ObjectPool(size_t maxPoolSize);
 		ObjectPool(const ObjectPool& other) = delete;
 		~ObjectPool();
@@ -82,7 +82,6 @@ namespace lab9
 	{
 		mMaxPoolSize = size;
 	}
-
 
 	template<typename T>
 	size_t lab9::ObjectPool<T>::GetFreeObjectCount()
