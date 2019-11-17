@@ -41,6 +41,8 @@ namespace lab9
 		{
 			delete (*itr);
 		}
+
+		mInstancePool.clear();
 	}
 
 	template<typename T>
