@@ -4,6 +4,7 @@
 #include <queue>
 #include <type_traits>
 
+
 namespace assignment3
 {
 	template <typename T>
