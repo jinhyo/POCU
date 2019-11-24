@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 
+using namespace std;
 
 namespace lab9
 {
@@ -24,7 +25,7 @@ namespace lab9
 	private:
 		size_t mMaxPoolSize;
 		size_t mPoolCount;
-		std::vector<T*> mInstancePool;
+		vector<T*> mInstancePool;
 	};
 
 	template<typename T>
@@ -72,7 +73,6 @@ namespace lab9
 
 		else
 		{
-			instance->Reset();
 			mInstancePool.push_back(instance);
 		}
 	}

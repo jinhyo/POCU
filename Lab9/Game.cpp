@@ -1,5 +1,6 @@
 #include "Game.h"
 
+
 namespace lab9
 {
 	Game::Game(unsigned int seed, unsigned int poolSize)
