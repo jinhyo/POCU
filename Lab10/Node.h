@@ -19,14 +19,14 @@ namespace lab10
 	Node<T>::Node(std::unique_ptr<T> data)
 		: Data(std::move(data))
 		, Next(nullptr)
-		, Previous(Next) 
+		//, Previous(nullptr) 문제 발생(없어도 문제 없이 작동)
 	{
 	}
 
 	template<typename T>
 	Node<T>::Node(std::unique_ptr<T> data, std::shared_ptr<Node<T>> prev)
 		: Data(std::move(data))
-		, Next(prev->Next)
+		//, Next(prev->Next) // 문제 발생
 		, Previous(prev)
 	{
 	}

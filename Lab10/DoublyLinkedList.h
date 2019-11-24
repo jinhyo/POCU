@@ -40,6 +40,8 @@ namespace lab10
 	void DoublyLinkedList<T>::Insert(std::unique_ptr<T> data)
 	{
 		std::shared_ptr<Node<T>> newNode;
+
+		// 리스트가 비어있는 경우
 		if (mLength == 0)
 		{
 			newNode = std::make_shared<Node<T>>(std::move(data));
@@ -78,7 +80,9 @@ namespace lab10
 		// 리스트가 비어있지 않은 경우 가장 앞에 추가
 		else if (mHead != nullptr && index == 0)
 		{
-			newNode = std::make_shared<Node<T>>(std::move(data), mHead);
+			newNode = std::make_shared<Node<T>>(std::move(data));
+			newNode->Next = mHead;
+			mHead->Previous = newNode;
 			mHead = newNode;
 			++mLength;
 		}
@@ -87,13 +91,20 @@ namespace lab10
 		else if (newNode == nullptr)
 		{
 			newNode = std::make_shared<Node<T>>(std::move(data), mTail);
+			mTail->Next = newNode;
+			mTail = newNode;
 			++mLength;
 		}
 
 		// 노드들 사이에 추가
 		else
 		{
+			std::shared_ptr<Node<T>> temp;
 			newNode = std::make_shared<Node<T>>(std::move(data), newNode->Previous.lock());
+			temp = newNode->Previous.lock();
+			newNode->Next = temp->Next;
+			// temp->Next = newNode; 문제 발생
+			temp->Next = newNode; 
 			++mLength;
 		}
 	}
