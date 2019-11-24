@@ -102,8 +102,6 @@ namespace lab10
 			std::shared_ptr<Node<T>> temp = newNode->Previous.lock();
 			newNode = std::make_shared<Node<T>>(std::move(data), temp);
 			newNode->Next = temp->Next;
-			// newNode->Previous = temp; 런타임 오류 발생
-			// temp->Next = newNode; 런타임 오류 발생
 			temp->Next = newNode; 
 			++mLength;
 		}
@@ -185,6 +183,7 @@ namespace lab10
 		// 이건 어디에 쓰는지?
 		/*auto x = std::make_unique<T>();
 		std::shared_ptr<Node<T>> temp = std::make_shared<Node<T>>(std::move(x));*/
+
 		std::shared_ptr<Node<T>> temp = mHead;
 		for (size_t i = 0; i < index && temp != nullptr; i++)
 		{

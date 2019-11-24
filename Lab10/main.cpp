@@ -6,7 +6,7 @@ using namespace lab10;
 
 int main()
 {
-	DoublyLinkedList<int> list;
+	/*DoublyLinkedList<int> list;
 
 	list.Insert(std::make_unique<int>(1));
 	list.Insert(std::make_unique<int>(2));
@@ -40,9 +40,9 @@ int main()
 	list.Insert(std::make_unique<int>(10), 2); 
 
 	node = list[2];
-	assert(*node->Data == 10);
+	assert(*node->Data == 10);*/
 
-	/*_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
 	DoublyLinkedList<int> list;
 
@@ -133,7 +133,7 @@ int main()
 	bDeleted = list.Delete(13);
 	assert(bDeleted);
 
-	assert(list[0] == nullptr);*/
+	assert(list[0] == nullptr);
 
 	return 0;
 }
