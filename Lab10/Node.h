@@ -19,7 +19,7 @@ namespace lab10
 	Node<T>::Node(std::unique_ptr<T> data)
 		: Data(std::move(data))
 		, Next(nullptr)
-		//, Previous(nullptr) 컴파일 오류 발생(없어도 문제 없이 작동)
+		// Previous(nullptr) 컴파일 오류 발생(없어도 문제 없이 작동)
 		, Previous(Next)
 	{
 	}
