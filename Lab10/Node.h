@@ -19,7 +19,7 @@ namespace lab10
 	Node<T>::Node(std::unique_ptr<T> data)
 		: Data(std::move(data))
 		, Next(nullptr)
-		//, Previous(nullptr) ¿¡·¯³²
+		, Previous(Next) 
 	{
 	}
 

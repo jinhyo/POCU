@@ -102,8 +102,7 @@ namespace lab10
 	bool DoublyLinkedList<T>::Delete(const T& data)
 	{
 		std::shared_ptr<Node<T>> del = mHead;
-		while (del != nullptr && memcmp(static_cast<const void*>(del->Data.get())
-			, static_cast<const void*>(&data), sizeof(data)) != 0)
+		while (del != nullptr && memcmp(static_cast<const void*>(del->Data.get()), static_cast<const void*>(&data), sizeof(data)) != 0)
 		{
 			del = del->Next;
 		}
@@ -152,8 +151,7 @@ namespace lab10
 	bool DoublyLinkedList<T>::Search(const T& data) const
 	{
 		std::shared_ptr<Node<T>> f = mHead;
-		while (f != nullptr && memcmp(static_cast<const void*>(f->Data.get()), 
-			static_cast<const void*>(&data), sizeof(data)) != 0)
+		while (f != nullptr && memcmp(static_cast<const void*>(f->Data.get()), static_cast<const void*>(&data), sizeof(data)) != 0)
 		{
 			f = f->Next;
 		}
