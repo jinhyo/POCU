@@ -7,8 +7,6 @@ namespace lab10
 	template<typename T>
 	class Node
 	{
-		// friend class DoublyLinkedList;
-
 	public:
 		Node(std::unique_ptr<T> data);
 		Node(std::unique_ptr<T> data, std::shared_ptr<Node<T>> prev);
@@ -19,18 +17,17 @@ namespace lab10
 
 	template<typename T>
 	Node<T>::Node(std::unique_ptr<T> data)
-		: Data(data)
+		: Data(std::move(data))
 		, Next(nullptr)
-		, Previous(nullptr)
+		//, Previous(nullptr) ¿¡·¯³²
 	{
 	}
 
 	template<typename T>
 	Node<T>::Node(std::unique_ptr<T> data, std::shared_ptr<Node<T>> prev)
-		: Data(data)
+		: Data(std::move(data))
 		, Next(prev->Next)
 		, Previous(prev)
 	{
-		prev->Next(this);
 	}
 }

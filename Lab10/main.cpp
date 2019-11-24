@@ -37,7 +37,7 @@ int main()
 	std::shared_ptr<Node<int>> node = list[2];
 	assert(*node->Data == 4);
 
-	list.Insert(std::make_unique<int>(10), 2);
+	list.Insert(std::make_unique<int>(10), 2); // 이게 문제
 
 	node = list[2];
 	assert(*node->Data == 10);
