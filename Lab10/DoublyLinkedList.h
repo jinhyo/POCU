@@ -69,7 +69,7 @@ namespace lab10
 		}
 
 		// 리스트가 비어있는 경우
-		if (mHead = nullptr)
+		if (mHead == nullptr)
 		{
 			newNode = std::make_shared<Node<T>>(std::move(data));
 			mHead = newNode;
@@ -99,11 +99,11 @@ namespace lab10
 		// 노드들 사이에 추가
 		else
 		{
-			std::shared_ptr<Node<T>> temp;
-			newNode = std::make_shared<Node<T>>(std::move(data), newNode->Previous.lock());
-			temp = newNode->Previous.lock();
+			std::shared_ptr<Node<T>> temp = newNode->Previous.lock();
+			newNode = std::make_shared<Node<T>>(std::move(data), temp);
 			newNode->Next = temp->Next;
-			// temp->Next = newNode; 문제 발생
+			// newNode->Previous = temp; 런타임 오류 발생
+			// temp->Next = newNode; 런타임 오류 발생
 			temp->Next = newNode; 
 			++mLength;
 		}
@@ -139,7 +139,7 @@ namespace lab10
 		{
 			mTail = del->Previous.lock();
 			mTail->Next = nullptr;
-			//del->Previous->Next = nullptr;
+			// del->Previous->Next = nullptr; 컴파일 오류 발생
 			del = nullptr;
 			--mLength;
 
