@@ -147,7 +147,8 @@ namespace lab10
 		// 중간 노드 삭제
 		else
 		{
-			del->Previous.lock()->Next = del->Next;
+			std::shared_ptr<Node<T>> temp = del->Previous.lock();
+			temp->Next = del->Next;
 			del->Next->Previous = del->Previous;
 			del = nullptr;
 			--mLength;

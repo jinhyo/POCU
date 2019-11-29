@@ -20,7 +20,6 @@ namespace lab10
 		: Data(std::move(data))
 		, Next(nullptr)
 		// Previous(nullptr) 컴파일 오류 발생(없어도 문제 없이 작동)
-		, Previous(Next)
 	{
 	}
 
