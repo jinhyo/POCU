@@ -45,7 +45,8 @@ namespace lab11
 	Storage<T>::Storage(Storage<T>&& other)
 	{
 		mLength = other.mLength;
-		mArray.swap(other.mArray);
+		//mArray.swap(other.mArray);
+		mArray = std::move(other.mArray);
 		other.mLength = 0;
 	}
 
@@ -55,7 +56,8 @@ namespace lab11
 		if (this != &other)
 		{
 			mLength = other.mLength;
-			mArray.swap(other.mArray);
+			mArray = std::move(other.mArray);
+			//mArray.swap(other.mArray);
 			other.mLength = 0;
 		}
 
@@ -80,7 +82,7 @@ namespace lab11
 	/*	std::unique_ptr<T[]> temp = std::make_unique<T[]>(mLength);
 		temp = std::move(mArray);
 		return std::move(temp);*/
-		//return mArray;
+		return mArray;
 	}
 
 	template<typename T>
