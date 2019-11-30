@@ -10,10 +10,8 @@ namespace lab11
 	public:
 		Storage(unsigned int length);
 		Storage(unsigned int length, const T& initialValue);
-		Storage(Storage<T>& other) = delete;
 		Storage(Storage<T>&& other);
 
-		Storage<T>& operator=(Storage<T>& other) = delete;
 		Storage<T>& operator=(Storage<T>&& other);
 
 		bool Update(unsigned int index, const T& data);
@@ -82,7 +80,7 @@ namespace lab11
 	/*	std::unique_ptr<T[]> temp = std::make_unique<T[]>(mLength);
 		temp = std::move(mArray);
 		return std::move(temp);*/
-		return mArray;
+		//return mArray;
 	}
 
 	template<typename T>
