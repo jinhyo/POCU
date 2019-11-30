@@ -34,7 +34,7 @@ namespace lab11
 
 	template<typename T>
 	Storage<T>::Storage(unsigned int length, const T& initialValue)
-		:mLength(length)
+		: mLength(length)
 	{
 		mArray = std::make_unique<T[]>(mLength);
 		for (size_t i = 0; i < mLength; i++)
